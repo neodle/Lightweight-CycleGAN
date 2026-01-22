@@ -1,26 +1,27 @@
-# Maintaining-CycleGAN-based-colorization-performance-and-improving-processing-speed (CycleGAN기반 색상화 성능 유지와 처리 속도 향상)
+# Maintaining-CycleGAN-based-colorization-performance-and-improving-processing-speed 
+# (CycleGAN 기반 색상화 성능 유지와 처리 속도 향상)
 ---
 
 
 # CONTENTS
 
 
-* **Motivation** : 프로젝트의 주제 선정 및 배경
+* **Introduction** : 프로젝트 연구 배경
 
   
-* **Dataset** : 프로젝트에 사용한 데이터 셋 소개
+* **Purpose & Method** : 연구 목적 및 방법
 
   
-* **Model Architecture** : pix2pix 모델 
+* **Dataset & Data preprocessing** : 데이터 및 전처리  
 
 
-* **Model Analysis** : 모델 분석 결과
+* **CycleGAN Baseline** : 베이스라인 모델(CycleGAN)
 
   
-* **Model Improvement** : 분석 결과를 토대로 모델 성능 향상
+* **Lightweight CycleGAN** : CycleGAN 경량화
 
 
-* **Service deploy** : 서비스 방안 소개
+* **Experiment Result** : 연구 결과
 
 
 * **future works** : 향후 계획
@@ -29,20 +30,20 @@
 
 # Motivation
 
-최근 AI 기술의 발달로 과거의 기록물들을 디지털로 복원하려는 수요가 증가하고 있음
+기존 지도학습 기반의 모델인 Pix2Pix의 학습되지 않은 이미지에 대한 색상화 성능이 좋지 않음
 
-흑백 사진은 정보 전달력과 감성 전달 측면에서 한계를 가지며, 이를 색상화 함으로써 시각적 이해도와 몰입도와 생동감을 높일 수 있음
+이러한 한계를 이겨내기 위해서 비지도 학습 모델인 생성 적대적 신경망인 GAN이 대두되어 왔으며 그중에도 CycleGAN이 대두됨
 
-하지만 기존의 수작업으로 진행되던 색상화 방식은 시간과 비용이 많이 듬
+하지만 CycleGAN도 모델 자체가 너무 무거우며, 실시간성이 너무 부족하다는 단점이 존재함
 
-이에 본 프로젝트에서는 기존의 색상화 작업보다 시간과 비용 측면에서 효율적인 딥러닝을 이용한 색상화 방식에 대해 연구를 진행
+이에 본 프로젝트에서는 기존의 비지도 학습 기반의 CycleGAN보다 시간과 비용 측면에서 효율적인 딥러닝을 이용한 색상화 방식에 대해 연구를 진행
   
 자연스러운 복원 결과를 위해 시각적 유사성을 평가하는 성능 평가 지표 뿐만 아니라 사용자 주관적 평가도 함께 고려함
 
 이를 통해 역사적 기록물, 사진 복원, 교육용 자료등 다양한 분야에 활용할 수 있으며, 더나아가 개인의 소중한 기억의 한 조각을 찾는 효과를 기대할 수 있음 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4c2ef17c-7355-46f5-8ad2-bebae5f75b61" width="700" />
+  <img src="<img width=975 img height="485 alt="image" src="https://github.com/user-attachments/assets/6f780525-e354-43ab-acee-b5bcc3c866ce" />"
 </p>
 
 

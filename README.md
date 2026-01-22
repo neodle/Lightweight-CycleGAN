@@ -9,7 +9,7 @@
 * **Introduction** : 프로젝트 연구 배경
 
   
-* **Purpose & Method** : 연구 목적 및 방법
+* **Object & Method** : 연구 목적 및 방법
 
   
 * **Dataset & Data preprocessing** : 데이터 및 전처리  
@@ -24,34 +24,38 @@
 * **Experiment Result** : 연구 결과
 
 
-* **future works** : 향후 계획
+* **Future works** : 향후 계획
 ---
 
 
 # Motivation
 
-기존 지도학습 기반의 모델인 Pix2Pix의 학습되지 않은 이미지에 대한 색상화 성능이 좋지 않음
+Pix2Pix 와 같은 지도 학습 기반의 모델은 동일 장면의 쌍(pair) 데이터에 의존하므로 오래된 사진, 역사 기록물 등 특수한 상황에서의 데이터 확보가 어렵고, 고비용이 요구
 
-이러한 한계를 이겨내기 위해서 비지도 학습 모델인 생성 적대적 신경망인 GAN이 대두되어 왔으며 그중에도 CycleGAN이 대두됨
+이러한 한계를 해결하기 위해 CycleGAN 이 제안되었으며 비쌍 데이터(unpaired) 기반 학습을 통해 다양한 도메인에 적용할 수 있는 가능성을 보여주었
 
-하지만 CycleGAN도 모델 자체가 너무 무거우며, 실시간성이 너무 부족하다는 단점이 존재함
+하지만 CycleGAN도 모델 자체가 너무 무거우며, 실시간 처리 성능이 너무 부족하다는 단점이 존재함
 
-이에 본 프로젝트에서는 기존의 비지도 학습 기반의 CycleGAN보다 시간과 비용 측면에서 효율적인 딥러닝을 이용한 색상화 방식에 대해 연구를 진행
+이에 본 프로젝트에서는 기존의 비지도 학습 기반의 CycleGAN 모델의 성능은 유지하되 실시간 처리 속도를 향상시키는 연구를 진행
   
 자연스러운 복원 결과를 위해 시각적 유사성을 평가하는 성능 평가 지표 뿐만 아니라 사용자 주관적 평가도 함께 고려함
 
-이를 통해 역사적 기록물, 사진 복원, 교육용 자료등 다양한 분야에 활용할 수 있으며, 더나아가 개인의 소중한 기억의 한 조각을 찾는 효과를 기대할 수 있음 
+이를 통해 교육용 자료나 문화유산 복원, 모바일 애플리케이션, 엣지 디바이스 등 다양한 실제 환경에서도 실시간 적용이 가능하도록 제안
 
-<p align="center">
-  <img src="<img width=975 img height="485 alt="image" src="https://github.com/user-attachments/assets/6f780525-e354-43ab-acee-b5bcc3c866ce" />"
-</p>
 
+
+| Pix2Pix colorization result image |
+|-----------------------------------|
+| <img src="https://github.com/user-attachments/assets/6f780525-e354-43ab-acee-b5bcc3c866ce" /> | 
 
 --- 
 
 # **Project object**
 
-**프로젝트 목표:** 딥러닝 모델을 활용한 흑백 사진을 자연스럽고 실사에 가까운 컬러 이미지로 복원하는 AI 시스템 구현
+**프로젝트 목표** 
+
+CycleGAN 모델의 구조적 경량화로 모델 연산 효율 향상 및 처리 속도를 개선하여 실시간 응용이 가능한 색상화 모델 개발
+
 
 
 --- 
@@ -60,7 +64,7 @@
 # **Flowchart** 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4d278af9-5f86-477f-bb96-d5dcee76fed9" width="700" />
+  <img src="https://github.com/user-attachments/assets/3f3fb23e-6375-495a-bcfe-6fd304a2299c" width="1000" />
 </p>
 
 ---
